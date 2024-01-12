@@ -25,6 +25,11 @@ function BankCount() {
         }
       );
       const result = await response.json();
+      if (result.status === 401) {
+        localStorage.removeItem("token");
+        window.location.reload();
+      }
+      console.log(result);
       dispatch(setUserDetails(result.body));
       console.log(result);
     } catch (error) {
@@ -55,6 +60,10 @@ function BankCount() {
         }
 
         const userData = await response.json();
+        if (userData.status === 401) {
+          localStorage.removeItem("token");
+          window.location.reload();
+        }
         dispatch(setUserDetails(userData));
       } catch (error) {
         console.error(
