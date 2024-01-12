@@ -120,24 +120,30 @@ definitions:
   Transaction:
     type: object
     properties:
-      description:
+      category:
         type: string
-        example: "Ceci est un commentaire."
+        example: "Alimentation"
+      note:
+        type: string
+        example: "Ceci est une note"
   TransactionDetail:
     type: object
     properties:
       id:
         type: integer
         example: 1
-      description:
+      category:
         type: string
-        example: "Ceci est un commentaire."
+        example: "Alimentation"
+      note:
+        type: string
+        example: "Ceci est une note"
       date:
         type: string
         example: "2019-01-01T00:00:00.000Z"
       amount:
-        type: string
-        example: "28,00"
+        type: number
+        example: "28.00"
   Transactions:
     type: array
     items:
